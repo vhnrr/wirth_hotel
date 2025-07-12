@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="login-header">
+      <div class="accent-bar"></div>
+      <h2>WELCOME!</h2>
+    </div>
+
+    <form action="/login" method="POST">
+      <div class="input-group">
+        <input type="email" name="email" id="InputEmail" required placeholder="💌  Email address">
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" id="InputPassword" required placeholder="🔐  Password">
+      </div>
+
+      <div class="show-password">
+        <input type="checkbox" id="showPasswordCheckbox">
+        <label for="showPasswordCheckbox">Show Password</label>
+      </div>
+
+      <button type="submit">LOGIN</button>
+
+      {{ if eq .Status "failed" }}
+      <p class="error-message">Login failed! {{ .error }}</p>
+      {{ end }}
+
+      <div class="links">
+        <a href="/register">Create an Account!</a>
+        <a href="/">🏠 Back to Homepage 🏠</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById('showPasswordCheckbox');
+    const passwordField = document.getElementById('InputPassword');
+
+    checkbox.addEventListener('change', function () {
+      passwordField.type = checkbox.checked ? 'text' : 'password';
+    });
+  </script>
+
+</body>
+</html>

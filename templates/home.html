@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - WIRTH HOTEL</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- <link rel="stylesheet" href="/static/style2.css" /> -->
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+        <h1>WIRTH HOTEL</h1>
+        <nav class="nav">
+        <a href="/" class="home">Home</a>
+        <a href="/about" class="about">About</a>
+        <a href="/review" class="review">Review</a>
+        {{ if .LoggedIn }}
+        <a href="/profile" class="profile">Profile</a>
+        {{ else }}
+            <a href="/login" class="login">Login</a>
+        {{ end }}
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="image-rating">
+        <div class="hotel-image">
+            <img src="/static/images/wirth_hotel.jpg" alt="Hotel Image" />
+        </div>
+        <div class="rating" aria-label="Hotel rating: 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        </section>
+
+        {{ if .LoggedIn }}
+        <form action="/confirmation" method="POST"> <!-- Menambahkan form -->
+            <div class="booking-details">
+                <!-- fitur nama pelanggan -->
+                <label for="name">Name :</label> <!-- tulisan "nama" diatas kotak input -->
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+
+
+                <!-- tulisan check-in - check-out -->
+                <div class="date-inputs">
+                    <label for="check-in">Check-in :</label> <!-- tulisan check-in -->
+                    <!-- tulisan check-out, inline-label agar bisa digeser-geser-->
+                    <label for="check-out" class="inline-label">Check-Out :</label>
+                </div>
+                <!-- fitur tanggal check-in check-out -->
+                <div class="date-inputs">
+                    <input type="date" id="check-in" name="check-in"> <!-- Tambahkan name -->
+                    <input type="date" id="check-out" name="check-out"> <!-- Tambahkan name -->
+                </div>
+
+                <!-- fitur kamar -->
+                <div class="kamar1" style="display: flex; align-items: center;">
+                    <div class="jenis-kamar" style="flex: 1; max-width: 50%;">
+                        <label for="guest-room">Guest Room :</label> <!-- tulisan "kamar"-->
+                        <!-- fitur pilihan kamar -->
+                        <select id="guest-room" name="guest-room"> <!-- Tambahkan name -->
+                            <option>Old Money Room</option>
+                            <option>Modern Room</option>
+                            <option>Undersea Room</option>
+                            <option>Viking Room</option>
+                            <option>Mermaid Room</option>
+                        </select>
+                    </div>
+
+                    <div class="guest-count" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                        <label for="guest-count">Guest Count :</label>
+                        <select id="guest-count" name="guest-count" class="form-select" aria-label="Default select example"> <!-- Tambahkan name -->
+                            <option selected="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                            <option value="6">Six</option>
+                            <option value="7">Seven</option>
+                            <option value="8">Eight</option>
+                            <option value="9">Nine</option>
+                            <option value="10">Ten</option>
+                            <option value="11">Eleven</option>
+                            <option value="12">Twelve</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- fitur kontak -->
+                <!-- fitur email -->
+                <label for="email">E-Mail</label> <!-- tulisan email -->
+                <input type="text" id="email" name="email" placeholder="Enter Your Email" required>
+
+
+                <!-- fitur tombol -->
+                <button type="submit" class="book-now">Book Now</button> <!-- Menambahkan type="submit" -->
+                </div>
+            </form>
+            {{ else }}
+            <section class="intro">
+                <h2>Welcome to WIRTH HOTEL!</h2>
+                <h3>Step into a World of Wonder at WIRTH HOTEL</h3>
+                <p>
+                    Experience extraordinary stays where every room tells a different story.
+                    From the majestic halls of the <strong>Viking Room</strong>, the tranquil depths of the
+                    <strong>Undersea Room</strong>, the enchanting charm of the <strong>Mermaid Room</strong>,
+                    to the timeless elegance of the <strong>Old Money Room</strong>—each space is crafted
+                    to immerse you in a world like no other.
+                </p>
+                <p>
+                    Located in the heart of the city, WIRTH HOTEL combines luxurious comfort
+                    with themed fantasy, making every stay unforgettable.
+                </p>
+                </section>
+            {{ end }}
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h1>Contact Us</h1>
+            <p>Email: wirthotel@gmail.com</p>
+            <p>Phone: +123456789</p>
+            <p>Location: Jl. R.A. Kartini, Jakarta Selatan, Indonesia</p>
+        </div>
+        <div class="footer-column">
+            <h1>Social Media</h1>
+            <p>Instagram: @wirthotel_ig</p>
+            <p>Twitter: @wirthotel_twt</p>
+            <p>TikTok: @wirthotel_tiktok</p>
+            <p>YouTube: @wirthotel_yt</p>
+        </div>
+    </footer>
+  </div>

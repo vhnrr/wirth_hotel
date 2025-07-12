@@ -1,0 +1,907 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman'; /* jenis font */
+}
+
+body {
+    background-color: #f8f2f3; /* background body (bagian tengah) */
+    display: flex;
+    flex-direction: column; /* elemen di body horizontal (sebaris x/kesamping) */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* keseluruhan tampilan halaman web */
+.container {
+    /* jarak antara tampilan web dengan layar, jadi kayak bingkai */
+    margin: 0; /* jika margin = auto, konten akan terpusat, seperti tampilan layar hp */
+    padding: 0; /* i think same? */
+    overflow: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+/* Main container for the image and booking details */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start; /* Mengatur vertikal tengah */
+    justify-content: center; /* Mengatur horizontal tengah */
+    gap: 40px; /* jarak antara gambar dengan booking details */
+    padding: 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 380px;
+}
+
+/* bagian class header */
+.header {
+    background-color: #164c7c; /* warna background */
+    color: white; /* warna teks */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px; /* jarak antara teks dengan kotak teks nya ("wirth hotel" dengan warna coklat sekeliling) */
+    margin-bottom: 30px; /* jarak antara header dan body (gambar, booking details) */
+    flex-shrink: 0;
+}
+.header h1 {
+    font-size: 28px;
+    margin-left:20px; /* ukuran tulisan header */
+}
+
+/* bagian class footer  */
+.footer {
+    background-color: #164c7c; /* warna background */
+    color: white; /* warna teks */
+    display: flex;
+    min-width: 100%; /* agar footer penuh secara horizontal, jika min-height secara vertikal */
+    padding: 30px; /* jarak antara teks dengan kotak teks nya (tulisan dengan warna coklat sekeliling) */
+} 
+/* tata letak bagian class footer column (Contact Us dan Social Media)  */
+.footer-column {
+     /* Membagi setiap kolom sama rata, selama flex !=0, kolom akan terus sama rata 
+    karena contact us dan social media sama" footer column (kelas nya sama) */
+    flex: 1;
+}
+/* tulisan header (cetak tebal/h1) di footer column */
+.footer-column h1 {
+    font-size: 18px; /* ukuran tulisan */
+    /* text-decoration: underline; tulisan di garis bawahi */
+    margin-bottom: 10px;
+    margin-left:20px; /* jarak antara header (tulisa tebal) dengan paragraf (teks biasa) */
+}
+/* tulisan teks biasa */
+.footer-column p {
+    /* jarak teks dari kotak coklat: 
+    bawah = 5 (result: kotak coklat bagian bawah panjang nya jadi sampai ke layar, 
+    kiri = 0 (result: sejajar sama header) */
+    margin-left:20px; 
+    margin-bottom: 5px;
+    font-size: 16px; /* ukuran tulisan */
+}
+.footer {
+    margin-top: 20px; /* jarak footer dan body */
+}
+
+/* navigation bar */
+.home{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.review{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.about{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.login{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.profile{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+/* home.html */
+/* image and rating */
+.hotel-image img {
+    width: 100%;  
+    height: 100%;
+    border-radius: 12px; /* ujung nya jadi setengah lingkaran (round), ga kotak */
+    object-fit: cover;
+}
+.hotel-image {
+    flex: 1;
+    max-width: 500px;
+    height: 100%;
+}
+.rating {
+    text-align: center;
+    font-size: 40px; /* Larger stars */
+    color: #e1ad01;
+    margin-top: 2px; /* jarak bintang dengan gambar */
+}
+/* posisi bintang */
+.image-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* fitur booking */
+.booking-details {
+    background-color: #091e30;
+    border-radius: 10px;
+    padding: 20px; /* Larger padding for more spacing */
+    width: 100%;
+    max-width: 600px; /* Adjusted max-width for larger booking box */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+/* tulisan di fitur booking details: nama, check-in, check-out, kamar, kontak */
+.booking-details label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 20px; /* Size Teks */
+    color: white;
+}
+/* fitur tanggal */
+.date-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Jarak antara check-in dan check-out */
+}
+.date-inputs label {
+    font-size: 20px; /* Menyesuaikan ukuran font */
+}
+.inline-label {
+    transform: translateX(-60%);  /* geser check-out */
+}
+/* fitur input dan select option */
+.booking-details input[type="text"],
+.booking-details input[type="date"],
+/* tampilan booking */
+.booking-details select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* kamar */
+.jenis-kamar {
+    border-radius: 10px;
+    color: #242e40;
+}
+.jumlah-kamar {
+    border-radius: 10px;
+    color: #242e40;
+}
+
+/* button book now */
+.book-now {
+    width: 100%;
+    padding: 15px; /* Larger button */
+    border: none;
+    border-radius: 5px;
+    background-color: #164c7c;
+    color: white;
+    font-size: 20px; /* Larger button text */
+    cursor: pointer;
+}
+.book-now:hover {
+    background-color: #43cb71;
+}
+
+/* INTRO */
+.intro {
+  flex: 1;
+  max-width: 600px;
+  height: 100%;
+  padding: 30px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro h2 {
+  font-size: 32px;
+  color: #164c7c;
+  margin-bottom: 10px;
+}
+
+.intro h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+
+/* about.html */
+/* bagian gambar */
+.kamar1-image img {
+    border-radius: 15px; /* ujung nya jadi setengah lingkaran (round), ga kotak */
+    border: 5px; /* bingkai */
+}
+/* teks */
+.kamar2-description{
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 30px;
+    color: #242E40;
+}
+/* styling untuk harga kamar */
+.room-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #efd3d2; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.room-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #efd3d2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #533035;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* review.html*/
+/* kotak dan ulasan(teks) */
+.review-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #242e40;
+}
+/* bintang */
+.rating-review {
+    font-size: 30px; /* Larger stars */
+    color: gold;
+    margin-top: 0px;
+    margin-bottom: 25px; /* jarak bintang dengan gambar */
+}
+
+/* confirmation.html */
+/* Reset + background */
+.confirmation-body {
+  min-height: 100vh;
+  max-height: none;
+  overflow-y: auto;
+  display: block; /* pastikan bukan flex yang menyebabkan masalah */
+}
+
+
+/* Tambahan styling konfirmasi */
+.confirmation-message {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* Biar tombolnya sejajar dan responsif */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* Wrapper layout as in version awal */
+.wrapper {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (min-height: 700px) {
+  .wrapper {
+    min-height: 100vh;
+    align-items: center;
+  }
+}
+
+
+/* Box */
+.confirmation-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  font-size: 15px;        /* Ukuran font lebih kecil dari default */
+  line-height: 1.5;
+  transform: scale(0.96); /* Perkecil box sedikit */
+  transform-origin: top center;
+}
+
+/* Text styling */
+.confirmation-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #000;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.info-group {
+  font-size: 16px;
+  color: #000;
+}
+
+.info-row {
+  margin-bottom: 10px;
+}
+
+.label {
+  display: inline-block;
+  font-weight: 500;
+  width: 150px;
+}
+.label::after {
+  content: ":";
+  margin-left: 6px;
+}
+
+.info-row.total {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Button style */
+.btn-primary {
+  background-color: #164c7c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.custom-download-btn {
+  background-color: #d63384;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  min-width: 160px;
+  cursor: pointer;
+}
+.custom-download-btn:hover {
+  background-color: #a71d61;
+}
+
+/* Untuk menyusun tombol dalam satu baris */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Hide buttons during print */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+
+/* receipt */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.action-btn {
+  font-size: 14px;
+  padding: 10px 20px;
+  min-width: 160px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #164c7c;
+  color: white;
+}
+
+.custom-download-btn {
+  background-color: #d63384;
+  color: white;
+}
+
+.custom-download-btn:hover {
+  background-color: #a71d61;
+}
+
+
+
+
+/* LOGIN */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #efd3d2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.accent-bar {
+  width: 5px;
+  height: 30px;
+  background-color: #164c7c;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #164c7c;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.input-group input::placeholder {
+  color: #000000;
+}
+
+.show-password {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.show-password label {
+  margin-left: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: #164c7c;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #d63384;
+  color: white;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  display: block;
+  margin: 5px 0;
+  color: #1f75a6;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a:hover {
+  text-decoration: underline dotted #d63384;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* about - body */
+/* Khusus halaman About */
+
+.about-body {
+  background-color: #efd3d2;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.about-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-room {
+  display: flex;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.about-room:hover {
+  transform: scale(1.01);
+}
+
+.about-room-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 40%;
+  overflow: hidden;
+}
+
+.about-room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-room-description {
+  flex: 1;
+  padding: 30px;
+}
+
+.about-room-description h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.about-room-description p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: justify;
+}
+
+.room-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #7f3232;
+  background-color: #fbb5b5;
+}
+
+.facilities-title {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.room-facilities {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.room-facilities li {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 6px;
+}
+
+/* Profile.html */
+/* Background dan font body khusus profile */
+.profile-body {
+  background-color: #efd3d2;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logout */
+.logout {
+  color: #ff0202; 
+  font-weight: bold;
+  text-decoration: none !important;
+  font-size: 20px;
+}
+
+.logout:hover {
+  color: #9b0909;
+  text-decoration: none !important;
+}
+
+/* Main container profile */
+html,
+.profile-body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 80px 20px;
+}
+
+.profile-body .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-body .profile-main {
+  flex: 1;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-body .header {
+  flex-shrink: 0;
+}
+
+.profile-body .footer {
+  flex-shrink: 0;
+  margin-top: 0;
+  background-color: #164c7c;
+  color: white;
+  padding: 30px 20px;
+}
+
+/* Section: Welcome dan History Title */
+.booking-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+.welcome-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #164c7c;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.history-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: 0.3px;
+}
+
+/* Tabel Booking */
+.booking-table-container {
+  overflow-x: auto;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.booking-table thead {
+  background-color: #164c7c;
+  color: white;
+}
+
+.booking-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Link "See Details" */
+.details-link {
+  display: inline-block;
+  background-color: #d63384;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.details-link:hover {
+  background-color: #eea6d7;
+}
+
+/* No booking message */
+.no-booking-msg {
+  text-align: center;
+  color: #000000;
+  margin-top: 40px;
+  font-style: italic;
+}
+
+
+
+/* fitur baru
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+.dropdown-label {
+    display: block;
+    padding: 10px;
+    background-color: #f2f4f8;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 10px;
+    width: 100%;
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.counter-container {
+    display: grid;
+    grid-template-columns: auto repeat(3, 50px); 
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman';
+    font-size: 18px;
+}
+.label {
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 40px;
+    background-color: #f2f4f8;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #007bff;
+}
+.button:disabled {
+    color: #b0b8c1;
+    cursor: not-allowed;
+}
+.value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+sampai sini */

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title> <!-- title chrome -->
+    <link rel="stylesheet" href="/static/style.css"> <!-- link ke css -->
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>WIRTH HOTEL</h1>
+            <nav class="nav">
+            <a href="/" class="home">Home</a>
+            <a href="/about" class="about">About</a>
+            <a href="/review" class="review">Review</a>
+            {{ if .LoggedIn }}
+            <a href="/profile" class="profile">Profile</a>
+            {{ else }}
+                <a href="/login" class="login">Login</a>
+            {{ end }}
+            </nav>
+        </header>
+
+        <!-- Review -->
+        <div class="kamar1" style="display: flex; align-items: center; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Azra Baskara</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Pelayanannya bagus dan tangkas, fasilitasnya lengkap, kamarnya juga out of the box.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Giselle Angelina</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Bagus bangetttt iiii, kapan lagi bisa nikmatin kamar tema laut kaya gini. Falling in Love sama Mermaid Room. Next time bakal kesana lagi.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Asep Septian</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Bagus.
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Ujang</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Keren pisan euy, urang tiasa asaan jadina jelema beunghar di kamar old-money. Mantaplah pokona.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Herman Maulana</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Bagus.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Joshua Bellen</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    I really recommended this hotel for you guys. The concept is really out of the box, 
+                    the design, the color, the tone, the furniture, the details, i never really amaze like this before. 
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Ucup Hermawan</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Cakeup euy, secakeup hargana hehe.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Ericka Richardo</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Amazing, the art is really another level. Kapan-kapan lagi.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Miselle Wijaya</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Biar bintang yang berbicara.
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Oyen</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Oh yeahhh, Very demure, Beyonce!
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Sultan Muhammad</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Masyaallah, Barakallahu fiikum.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Alessandro</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Numero Uno
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Ace Laurensia</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    I really love the design and concept of this hotel. Every room has different design that suprise your eyes.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Audi Pratama</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Konsep minimalis dan lautnya sangat eye catching. Next cobain old money.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Ezra Huda</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Pelayannya ramah dan sigap. Design tiap kamar nya unik dan indah. 
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Arez Sanjaya</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Viking, Captain !!!
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Sky Grande</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Amazing hotel i ever meet!
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Entong Ali</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Gaya bajak lautnyee keren abis dah, jadi inget masa mude ane.
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Mpok Lela</h2>
+                <div class="rating-review">
+                    ★★★☆☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Mahal harganyeee, tapi emang bagus sih yeee
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Sri Ratu Mahadewi</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Apik tenan iki! Cocok kanggo istirahat sawise karya lan preian karo kulawarga.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Tomohiro Otsuka</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Arigatou Gozaimashta Minasan! 
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Bagus Purnama</h2>
+                <div class="rating-review">
+                    ★★★☆☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Bagus sesuai harga.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Kartini</h2>
+                <div class="rating-review">
+                    ★★★★☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Pratama Ayu</h2>
+                <div class="rating-review">
+                    ★★★☆☆
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Sangat Bagus. Nyaman dan tenang, cocok buat hilangin penat.
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Sri Ramadhani</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Saya suka modern room. Perpaduan warna dan furniturnya sangat cocok dengan konsep minimalis.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Agatha Bellen</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    The viking and mermaid room are really get my attention. It can be inspiration for my novel and comic.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Azra Alkhalifi</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Bagusss bangetttt. Viking nya seru, underseanya indah, minimalisnya relax, old-money nya otentik.
+                </p>
+            </div>
+        </div>
+
+        <div class="kamar1" style="display: flex; align-items: center; margin-top:30px; margin-right: 50px; margin-left: 50px;">
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px;">
+                <h2>Wealthy Fei</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    What an amazing interior design! I really love every room in here, it's very otentic and unique. Very recommended for holiday.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; margin-left: 20px;">
+                <h2>Bening Rara</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Cantik kamarnya, yang mermaid detailnya luar biasa.
+                </p>
+            </div>
+
+            <div class="review-container" style="flex: 1; max-width: 50%; padding-left: 20px; margin-left: 20px;">
+                <h2>Vihan Ayunda</h2>
+                <div class="rating-review">
+                    ★★★★★
+                </div>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Desain minimalisnya cocok buat yang suka gaya modern. Desain old-money nya cocok buat gaya klasik.
+                </p>
+            </div>
+        </div>
+
+        <!-- kotak bagian bawah (footer)-->
+        <div class="footer">
+            <!-- kolom 1-->
+            <div class="footer-column">
+                <h1>Contact Us</h1>
+                <p>Email: wirthotel@gmail.com</p>
+                <p>Phone: +123456789</p>
+                <p>Location: Jl. R.A. Kartini, Jakarta Selatan, Indonesia</p>
+            </div>
+            <!-- kolom 2 -->
+            <div class="footer-column">
+                <h1>Social Media</h1>
+                <p>Instagram: @wirthotel_ig</p>
+                <p>Twitter: @wirthotel_twt</p>
+                <p>TikTok: @wirthotel_tiktok</p>
+                <p> Youtube : @wirthotel_yt </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

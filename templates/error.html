@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Profile - Booking History</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>WIRTH HOTEL</h1>
+      <nav class="nav">
+        <a href="/" class="home">Home</a>
+        <a href="/about" class="about">About</a>
+        <a href="/review" class="review">Review</a>
+        <a href="/logout" class="profile">Logout</a>
+      </nav>
+    </header>
+
+    <main class="main-container">
+        <main class="main-container">
+        <h1>Welcome, {{ .UserName }}</h1>
+        <h2>Error</h2>
+        <p>{{ .error }}</p>
+        <a href="/">Back to Home</a>
+        </main>
+
+    <footer class="footer">
+      <div class="footer-column">
+        <h1>Contact Us</h1>
+        <p>Email: wirthotel@gmail.com</p>
+        <p>Phone: +123456789</p>
+        <p>Location: Jl. R.A. Kartini, Jakarta Selatan, Indonesia</p>
+      </div>
+      <div class="footer-column">
+        <h1>Social Media</h1>
+        <p>Instagram: @wirthotel_ig</p>
+        <p>Twitter: @wirthotel_twt</p>
+        <p>TikTok: @wirthotel_tiktok</p>
+        <p>YouTube: @wirthotel_yt</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+

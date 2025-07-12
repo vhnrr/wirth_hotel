@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="login-header">
+      <div class="accent-bar"></div>
+      <h2>CREATE AN ACCOUNT</h2>
+    </div>
+
+    <form method="POST" action="/register">
+      <div class="input-group">
+        <input type="text" name="fullname" required placeholder="👤  Full Name">
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" required placeholder="💌  Email">
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" required placeholder="🔐  Password">
+      </div>
+
+      <div class="input-group">
+        <input type="date" name="dob" required>
+      </div>
+
+      <button type="submit">Register</button>
+
+      {{ if .error }}
+      <p class="error-message">{{ .error }}</p>
+      {{ end }}
+
+      <div class="links">
+        <a href="/login">Already have an account? Login</a>
+        <a href="/">🏠 Back to Homepage 🏠</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

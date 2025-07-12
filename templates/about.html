@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - WIRTH HOTEL</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body class="about-body">
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>WIRTH HOTEL</h1>
+      <nav class="nav">
+        <a href="/" class="home">Home</a>
+        <a href="/about" class="about">About</a>
+        <a href="/review" class="review">Review</a>
+        {{ if .LoggedIn }}
+        <a href="/profile" class="profile">Profile</a>
+        {{ else }}
+        <a href="/login" class="login">Login</a>
+        {{ end }}
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="about-main-container">
+      
+      <!-- Old Money Room -->
+     <!-- Old Money Room -->
+      <div class="about-room">
+        <div class="about-room-image">
+          <img src="/static/images/kamardewasa2.jpg" alt="Old Money Room" />
+        </div>
+        <div class="about-room-description">
+          <h2>Old Money Room</h2>
+          <p>Experience timeless luxury in our Old Money Room, where classic blue tones meet refined elegance. Surrounded by rich wooden furnishings and exquisite details, this room offers a warm, indulgent escape.</p>
+          <p>Step into a world of prestige and nostalgia—book now to relive the charm of old-world sophistication.</P>
+          <ul class="room-facilities">
+            <li>✓ Custom Scented Room 🌹</li>
+            <li>✓ Bathtub vintage 🛁</li>
+            <li>✓ Silk Pillowcase & Egyptian Cotton Bedding 🛏️</li>
+            <li>✓ Evening Turndown Service with Gourmet Chocolate 🍫</li>
+          </ul>
+          <p class="room-price">💰 Start From <strong>Rp 15.000.000</strong> / Night</p>
+        </div>
+      </div>
+
+      <!-- Modern Room -->
+      <div class="about-room">
+        <div class="about-room-image">
+          <img src="/static/images/kamardewasa1.jpg" alt="Modern Room" />
+        </div>
+        <div class="about-room-description">
+          <h2>Modern Room</h2>
+          <p>Experience the refreshing charm of our minimalist Modern Room, where calming shades of soft blue meet clean, neutral tones to create a serene and stylish retreat. Designed for both simplicity and comfort, this room offers the perfect balance of elegance and ease.</p>
+          <p>Book your stay now and unwind in a space made to soothe your senses after a long day.</p>
+          <ul class="room-facilities">
+            <li>✓ Marble Bathroom Amenities 🫧</li>
+            <li>✓ Minimal Decor with Calming Art Prints 🖼️</li>
+            <li>✓ Karaoke room 🎤</li>
+            <li>✓ Golf practice mat ⛳️</li>
+          </ul>
+          <p class="room-price">💰 Start From <strong>Rp 10.000.000</strong> / Night</p>
+        </div>
+      </div>
+
+      <!-- Undersea Room -->
+      <div class="about-room">
+        <div class="about-room-image">
+          <img src="/static/images/kamarhotel3.jpg" alt="Undersea Room" />
+        </div>
+        <div class="about-room-description">
+          <h2>Undersea Room</h2>
+          <p>No need to dive into the ocean—immerse yourself in the tranquil beauty of our Undersea Room instead. Blending rich shades of blue and earthy brown with tasteful ocean-inspired décor, this room offers a refreshing retreat that soothes the senses. Let the breeze of vacation serenity sweep you away—your underwater escape awaits.</p>
+          <ul class="room-facilities">
+            <li>✓ Ocean Sound Ambience System 🌊</li>
+            <li>✓ Seashell-Inspired Bathtub 🛁</li>
+            <li>✓ Aquarium-Inspired Headboard 🐟</li>
+            <li>✓ Salt Therapy Air Purifier 💨</li>
+          </ul>
+          <p class="room-price">💰 Start From <strong>Rp 25.000.000</strong> / Night</p>
+        </div>
+      </div>
+
+      <!-- Viking Room -->
+      <div class="about-room">
+        <div class="about-room-image">
+          <img src="/static/images/kamaranak2.jpg" alt="Viking Room" />
+        </div>
+        <div class="about-room-description">
+          <h2>Viking Room</h2>
+          <p>Welcome aboard our pirate-themed room, where adventure awaits!
+            Step into an immersive experience inspired by the high seas — complete with nautical décor, rustic charm, and vintage accents that transport you straight onto a pirate ship. In this room, you’re the captain of your own epic voyage.</p>
+            <p>Ready to set sail? Book now and let the adventure begin!</p>
+          <ul class="room-facilities">
+            <li>✓ ⚓ Ship-Inspired Wooden Bed Frame</li>
+            <li>✓ 🔐 Secret Compartment Drawer</li>
+            <li>✓ Interactive Pirate Map Wall Decor 📜</li>
+            <li>✓ Treasure Chest Snack Box 🍿</li>
+          </ul>
+          <p class="room-price">💰 Start From <strong>Rp 25.000.000</strong> / Night</p>
+        </div>
+      </div>
+
+      <!-- Mermaid Room -->
+      <div class="about-room">
+        <div class="about-room-image">
+          <img src="/static/images/kamaranak3.jpg" alt="Mermaid Room" />
+        </div>
+        <div class="about-room-description">
+          <h2>Mermaid Room</h2>
+          <p>Enter a world of magic in our enchanting Mermaid Room.
+            Immerse yourself in a serene undersea escape, where seashells glisten and coral reefs dance beneath soft lighting. Perfect for dreamers of all ages, this room brings the charm of an underwater kingdom to life.</p>
+        <p>✨ Book your stay today and indulge in modern comfort wrapped in the wonder of a mermaid's realm.</p>
+          <ul class="room-facilities">
+            <li>✓ Mermaid Tail Blanket & Themed Bedding 🛏️ 🧜‍♀️</li>
+            <li>✓ Pearl Slippers & Mermaid Robe 🧜‍♀️</li>
+            <li>✓ Ariel’s Movie Collection 🎥</li>
+            <li>✓ Shell-shaped Bath Bombs 🛁</li>
+          </ul>
+          <p class="room-price">💰 Start From <strong>Rp 30.000.000</strong> / Night</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-column">
+        <h1>Contact Us</h1>
+        <p>Email: wirthotel@gmail.com</p>
+        <p>Phone: +123456789</p>
+        <p>Location: Jl. R.A. Kartini, Jakarta Selatan, Indonesia</p>
+      </div>
+      <div class="footer-column">
+        <h1>Social Media</h1>
+        <p>Instagram: @wirthotel_ig</p>
+        <p>Twitter: @wirthotel_twt</p>
+        <p>TikTok: @wirthotel_tiktok</p>
+        <p>YouTube: @wirthotel_yt</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body class="confirmation-body">
+  <div class="wrapper">
+    <div class="confirmation-box shadow" id="receipt-content">
+      <h2 class="confirmation-title text-center">All Set! Here's Your Hotel Voucher</h2>
+
+      <h4 class="text-center confirmation-message mt-3">
+        Dear <strong>{{ .Name }}</strong>,<br />
+        Your hotel reservation has been successfully confirmed.
+      </h4>
+
+      <!-- HOTEL INFO -->
+      <h5 class="section-title">HOTEL DETAILS</h5>
+      <div class="info-group">
+        <div class="info-row"><strong>WIRTH HOTEL</strong></div>
+        <div class="info-row"><span class="label">Address</span> Jl. R.A. Kartini, Jakarta Selatan, Indonesia</div>
+        <div class="info-row"><span class="label">Contact</span> +1234567890</div>
+      </div>
+
+      <hr />
+
+      <!-- GUEST INFO -->
+      <h5 class="section-title">GUEST DETAILS</h5>
+      <div class="info-group">
+        <div class="info-row"><span class="label">Booking ID</span> {{ .BookingID }}</div>
+        <div class="info-row"><span class="label">Guest Name</span> {{ .Name }}</div>
+        <div class="info-row"><span class="label">Email</span> {{ .Email }}</div>
+      </div>
+
+      <hr />
+
+      <!-- BOOKING INFO -->
+      <h5 class="section-title">BOOKING INFORMATION</h5>
+      <div class="info-group">
+        <div class="info-row"><span class="label">Room Type</span> {{ .GuestRoom }}</div>
+        <div class="info-row"><span class="label">Guest(s)</span> {{ .GuestCount }}</div>
+        <div class="info-row"><span class="label">Check-in</span> {{ .CheckIn }}</div>
+        <div class="info-row"><span class="label">Check-out</span> {{ .CheckOut }}</div>
+        <div class="info-row"><span class="label">Price Per Night</span> Rp {{ .PriceFormatted }}</div>
+        <div class="info-row"><span class="label">Total Nights</span> {{ .TotalNights }} night(s)</div>
+      </div>
+
+      <hr />
+
+      <!-- TOTAL -->
+      <div class="info-group text-right">
+        <div class="info-row total"><strong>Total Cost of Your Stay : Rp {{ .TotalFormatted }}</strong></div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-buttons no-print mt-4">
+        <a href="/" class="btn btn-primary action-btn">Back to Home</a>
+        <button class="custom-download-btn action-btn" onclick="downloadPDF()">Download Receipt (PDF)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- html2pdf JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector("#receipt-content");
+      document.querySelectorAll(".no-print").forEach(el => el.style.display = "none");
+
+      const opt = {
+        margin: 0.5,
+        filename: "hotel-booking-receipt.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        document.querySelectorAll(".no-print").forEach(el => el.style.display = "block");
+      });
+    }
+  </script>
+</body>
+</html>
